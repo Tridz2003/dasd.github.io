@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Statistics</title>
+</head>
+<body>
+    <h1>Student Statistics</h1>
+    <div id="statistics"></div>
+
+    <script>
+        // Sử dụng XMLHttpRequest để gọi file thongke.php và hiển thị nội dung
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("statistics").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "thongke.php", true);
+        xhttp.send();
+
+    </script>
+</body>
+</html>
